@@ -1,6 +1,6 @@
 import random
 import time
-import matplotlib as mp
+import matplotlib as plt
  
 # This program tests to see if something
 # is statistcally siginificant or not
@@ -36,24 +36,24 @@ finalList = []
 for i in range(len(data2)):
     finalList += data2[i]
  
-uniqueNumbers = set(finalList) # Find a fix... This only uses range of first list
+uniqueNumbers = set(finalList) # Finds unique numbers in the combined list
 categories = []   # Set labels for x axis
 for number in uniqueNumbers:
     categories.append(number)
 print(categories)
 time.sleep(10)
  
-data3 = [[]]*len(uniqueNumbers)  # occurences per unique proportion
+data3 = []*len(uniqueNumbers)  # occurences per unique proportion
  
 for i in range(uniqueNumbers):
     data3[i] = counter(categories[i], finalList)  # assigns number of occurences
  
- 
+
 def counter(proportion, list):  # Counts occurences
     counter = 0
     for i in range(len(list)):
         if proportion == list[i]:
             counter += 1
     return counter
- 
+
 
