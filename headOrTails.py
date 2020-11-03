@@ -1,26 +1,40 @@
+import random
 
-def display(sampleSpace, quantity):
-    for i in range(len(sampleSpace)):
-        print(sampleSpace[i], end="")
-        if i+1 % quantity == 0:
-            print(" ")
+
+def check(combo, space):
+    count = 0
+    for i in range(len(space)):
+        if combo == space[i]:
+            count += 1
+    if count >= 2:
+        return False
+    return True
 
 # heads and tails only for now
 def f(quantity):
     sampleSpaceSize = 2**quantity # might not be needed
     sampleSpace = [[]]*sampleSpaceSize # ^^ will be needed for this
     names = ["H","T"] 
-    loop = sampleSpaceSize//2
 
-    for i in range(quantity):
-        for j in range(loop):
-            if j%2 == 0:
-                sampleSpace[i].append(names[0])
+
+    for i in range(sampleSpaceSize):
+        counter = 0
+        while True:
+            for j in range(2):
+                x = random.randint(0,1)
+                sampleSpace[i].append(names[x])
+            print(sampleSpace[i])
+            if counter > 20:
+                break
+            if not(check(sampleSpace[i], sampleSpace)):
+                sampleSpace[i].clear()
+                counter +=1
+                continue
             else:
-                sampleSpace[i].append(names[1])
-        loop //= 2
-    display(sampleSpace, quantity)
-
+                break
+                
+    print("done")
+    print(sampleSpace)
 '''
 0000
 1000
