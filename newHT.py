@@ -1,15 +1,21 @@
 
 times = int(input("How many coins? "))
-sampleSpace = []
 
+sampleSpace = []
 for i in range(2**times):
-    sampleSpace.append([])
+    sampleSpace.append("")
 
 names = ["H", "T"]
 
-for i in range(len(sampleSpace)):
+for i in range(2**times):
+    sampleSpace[i] = names[i%2]
+    # print(sampleSpace[i])
+    for j in range(times-1):
+        sampleSpace[i] += names[(j+(i%2))%2]
 
-    sampleSpace[i].append(names[i])
+    # for j in range(times):
+        # sampleSpace[i] += names[(j+i)%2]
+
 
 print(sampleSpace)
 
@@ -18,33 +24,33 @@ h
 t
 
 hh
-tt
 ht
 th
+tt
 
 hhh
-htt
 hht
 hth
+htt
 thh
-ttt
 tht
 tth
+ttt
 
 hhhh
-hhtt
 hhht
 hhth
+hhtt
 hthh
-httt
 htht
 htth
+httt
 thhh
-thtt
 thht
 thth
+thtt
 tthh
-tttt
 ttht
 ttth
+tttt
 '''
