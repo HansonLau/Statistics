@@ -27,8 +27,8 @@ def round(num): # rounds to hundreths place
     return float(num/100)
  
 numberOfOutcomes = int(input("How many outcomes? "))
-loops = 1
 sampleSize = int(input("What is the sample size? "))
+loops = int(input("How many SRS samples? "))
  
 # Initializes list with zeroes
 data1 = [0]*numberOfOutcomes  # answer from people
