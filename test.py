@@ -1,4 +1,3 @@
-
-for i in range(2):
-    print("a")
-    i = 0
+import random
+for i in range(10):
+    print(random.randint(1,2))
