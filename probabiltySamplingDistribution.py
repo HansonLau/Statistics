@@ -21,9 +21,6 @@ def simulate(l, s):
         total.append(l[x])
     
     return sum(total)/s
-    
-
-
 
 newList = generateList(proportion, bigList)
 
