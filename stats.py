@@ -27,8 +27,8 @@ def round(num): # rounds to hundreths place
     return float(num/100)
  
 numberOfOutcomes = int(input("How many outcomes? "))
-loops = 1
-population = int(input("What is the sample size? "))
+sampleSize = int(input("What is the sample size? "))
+loops = int(input("How many SRS samples? "))
  
 # Initializes list with zeroes
 data1 = [0]*numberOfOutcomes  # answer from people
@@ -36,11 +36,11 @@ data2 = [0]*loops # proportion/ how many times it occured
  
 # Assign randomness
 for i in range(loops):
-    for j in range(population):
+    for j in range(sampleSize):
         r = random.randint(0,numberOfOutcomes-1) # fix this
         data1[r] += 1
 
-    data2[i] = round((data1[0]/population)) # proportion
+    data2[i] = round((data1[0]/sampleSize)) # proportion
     data1 = [0]*numberOfOutcomes
 '''
 finalList = []
